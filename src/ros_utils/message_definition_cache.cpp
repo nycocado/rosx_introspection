@@ -14,11 +14,7 @@
 
 #include "message_definition_cache.hpp"
 
-#if AMENT_INDEX_CPP_VERSION_GTE(1, 13, 2)
 #include <ament_index_cpp/get_package_share_path.hpp>
-#else
-#include <ament_index_cpp/get_package_share_directory.hpp>
-#endif
 #include <ament_index_cpp/get_resource.hpp>
 #include <ament_index_cpp/get_resources.hpp>
 #include <fstream>
@@ -71,11 +67,7 @@ const MessageSpec& MessageDefinitionCache::load_message_spec(const std::string& 
   }
   std::string package = match[1];
   std::string share_dir;
-#if AMENT_INDEX_CPP_VERSION_GTE(1, 13, 2)
   share_dir = ament_index_cpp::get_package_share_path(package);
-#else
-  share_dir = ament_index_cpp::get_package_share_directory(package);
-#endif
   std::ifstream file{share_dir + "/msg/" + match[2].str() + ".msg"};
 
   std::string contents{std::istreambuf_iterator(file), {}};
