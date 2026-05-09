@@ -1,6 +1,7 @@
 #pragma once
 
 #include <rclcpp/rclcpp.hpp>
+#include <rclcpp/version.h>
 #include <rosbag2_cpp/types/introspection_message.hpp>
 #include <rclcpp/typesupport_helpers.hpp>
 #include <rosidl_typesupport_cpp/identifier.hpp>
