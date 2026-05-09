@@ -14,7 +14,6 @@
 
 #include "message_definition_cache.hpp"
 
-#include <ament_index_cpp/version.h>
 #if AMENT_INDEX_CPP_VERSION_GTE(1, 13, 2)
 #include <ament_index_cpp/get_package_share_path.hpp>
 #else
